@@ -1,0 +1,516 @@
+<speak>
+<amazon:domain name="news">
+Slide 1:
+This slide has no Notes.
+
+Slide 2:
+Building on concepts introduced in Architecting on AWS, Advanced Architecting on AWS is intended for individuals who are experienced with designing scalable and elastic applications on the AWS platform.  
+
+This course covers how to build complex solutions which incorporate data services, governance, and security on AWS. 
+
+Advanced Architecting also introduces specialized AWS services, including AWS Direct Connect and AWS Storage Gateway to support Hybrid architectures.  
+
+It will also include discussions of best practices for building scalable, elastic, secure, and highly available applications on AWS.
+
+
+Slide 3:
+This slide has no Notes.
+
+Slide 4:
+This slide has no Notes.
+
+Slide 5:
+Many companies use multiple AWS accounts to provide account-level isolation of resources and easier spending attribution by cost center.
+
+Slide 6:
+Enterprises and most other medium- to large-scale organizations could probably benefit from having multiple accounts. These are some of the most common reasons for splitting an organization into multiple accounts.
+
+Slide 7:
+In addition to resource isolation and better spending attribution, a benefit of using multiple AWS accounts is that service limits apply at the individual account level. So instead of one service limit (such as 20 Amazon EC2 instance reservations per Availability Zone per month) for the entire organization, each account gets to use a service up to its limits.
+
+One extra cost associated with using multiple accounts is that each individual account must pay for its own support. This can also be a benefit, however, since you can limit the level of support you pay for according to what&apos;s appropriate for that account.
+
+Slide 8:
+This slide has no Notes.
+
+Slide 9:
+One solution for managing these different teams using multi-account is using independent accounts separated completely from each other using Consolidated Billing for Organizations to manage billing and payments.
+
+These accounts can operate autonomously, with their own necessary teams and no need for any teams to be involved with any other team. Rather than have all of these teams share one account, risking potential complications due to improper authorization of access, or making tracking billing or security issues more complicated, each region, department, project, workload, etc., could have its own account.
+
+For more information about Consolidated Billing for Organizations, see: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html 
+
+Slide 10:
+This slide has no Notes.
+
+Slide 11:
+While using multiple large independent accounts is theoretically the simplest way to use and manage multiple accounts, ensuring uniform governance, administration, and auditing standards is difficult with separate teams. Additionally, your production and your non-production teams will not have account-level separation. In other words, without strict and specific AWS Identity and Access Management (IAM) controls, you risk violating the principle of least privileged access.
+
+For larger organizations, a multi-account pattern with centralized controls can be used to provide these benefits, with the drawback of greater administrative complexity.
+
+Slide 12:
+Note: The capacity reservation for an RI only applies to the account the RI was purchased on, regardless of whether RI Sharing is turned on or off.
+
+Slide 13:
+One way to leverage a centrally-control multi-account structure is to divide accounts by business unit.
+
+Slide 14:
+Another way to divide accounts is to use the phase of the application lifecycle.
+
+Slide 15:
+Accounts can be divided by project, application, cost center, or resource type.
+
+Slide 16:
+One solution for managing these different teams using multi-account is using independent accounts separated completely from each other.  In this situation, the account management and billing/payments are separate.
+
+As with the multi-account pattern, these accounts can operate autonomously and grant permission/access as appropriate.
+
+Slide 17:
+This slide has no Notes.
+
+Slide 18:
+This is an example of a hybrid account structure, where each application has its own payer account linked to separate accounts for each stage in the application&apos;s lifecycle.
+
+It is designed to provide increased visibility of resource consumption as well as administrative isolation along multiple dimensions.
+
+Best for larger organizations with larger, more complex environments and a strong DevOps environment
+
+Allows for strong mitigation of damage from critical failures.
+
+
+Slide 19:
+This example show how each payer account has linked accounts organized in a manner that based on that division&apos;s needs.
+
+Slide 20:
+Email addresses and AWS Account creation
+
+When creating a new AWS account, use a group alias rather than an individual email address as the account email address to ensure continuity of communication from AWS, regardless of the availability of the individual who creates or manages your account. 
+
+This will make it easier to identify and distinguish accounts from one another. Do this for all the notification emails configured on your account.
+
+Tagging Strategy
+
+When creating a tagging strategy for AWS resources, make sure that it accurately represents organizationally-relevant dimensions and adheres to the following best practices:
+
+Always use a standardized, case-sensitive format for tags and implement it consistently across all resource types.
+
+Consider tag dimensions that support the ability to manage resource access control, cost tracking, automation, and organization.
+Implement automated tools to help manage resource tags. 
+The Resource Groups Tagging API enables programmatic control of tags, making it easier to automatically manage, search, and filter tags and resources. It also simplifies backups of tag data across all supported services with a single API call per AWS Region.
+Error on the side of using too many tags rather than too few.
+It is easy to modify tags to accommodate changing business requirements, however consider the ramifications of future changes, especially in relation to tag-based access control, automation, or upstream billing reports.
+
+
+Leverage AWS APIs and scripts. You can leverage the AWS APIs and custom developed scripts to automatically and consistently apply baseline configurations across multiple AWS accounts.  For example, consider leveraging compliance-monitoring scripts to provide insight into how well a company&apos;s accounts comply with its defined policies and standards for AWS usage.
+
+For more information on the Resource Groups Tagging API, see https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html
+
+Slide 21:
+AWS License Manager integrates with AWS services to simplify the management of licenses across multiple AWS accounts, IT catalogs, and on-premises, through a single AWS account. 
+
+License administrators can add rules in AWS Service Catalog, which allows them to create and manage catalogs of IT services that are approved for use on all their AWS accounts.
+
+Through seamless integration with AWS Systems Manager and AWS Organizations, you can manage licenses across all the AWS accounts in an organization and on-premises environments. 
+
+AWS Marketplace buyers can also use AWS License Manager to track bring your own license (BYOL) software obtained from the Marketplace and keep a consolidated view of all their licenses.
+
+Slide 22:
+AWS License Manager makes it easy for you to manage licenses in AWS and on-premises servers from software vendors such as Microsoft, SAP, Oracle, and IBM. You can create custom licensing rules that emulate the terms of your licensing agreements and enforce these rules when an EC2 instance launches. The rules enable you to limit a licensing breach by preventing the instance from launching or by notifying you about the infringement.  
+
+You gain control and visibility of all your licenses using the AWS License Manager dashboard to reduce the risk of non-compliance, misreporting, and additional costs due to licensing overages.
+
+Supported License Types – AWS License Manager supports any license based on vCPUs, physical cores, and physical sockets, and is not tied to any software vendor.
+
+Cross-Account Usage – AWS License Manager works with AWS Organizations. Sign in to your Master account, link all of the accounts, and share license configurations across your Organization. You will be able to use the dashboard to see an Organization-wide view of your license usage.
+
+Multi-Account Software Discovery – AWS License Manager also works with AWS Systems Manager and across accounts within an Organization. The discovered data is stored in an S3 bucket and an Amazon Athena database (encrypted in both places) and is processed by a AWS Glue job.
+
+Programmatic Access – You can create and manage license configurations from the Console, APIs, or the AWS Command Line Interface (CLI). Interesting functions include CreateLicenseConfiguration, GetLicenseConfiguration, ListResourceInventory, and ListUsageForLicenseConfiguration.
+
+Pricing –There is no charge for AWS License Manager but there are charges for data storage and analysis. AWS License Manager stores inventory data in an S3 bucket and an Amazon Athena database and processes it using AWS Glue. 
+
+For more information about AWS License Manager, see https://aws.amazon.com/license-manager/  
+
+Slide 23:
+This slide has no Notes.
+
+Slide 24:
+While there is no one-size-fits-all answer for how many AWS accounts a you should have, many companies create more multiple AWS accounts because they provide the highest level of resource and security isolation. 
+
+Answering “yes” to any of the following is a good indication that you should consider creating additional AWS accounts:
+
+Does your business require administrative isolation between workloads?
+=Administrative isolation by account provides the most straightforward approach for granting independent administrative groups different levels of administrative control over AWS resources based on the workload, development lifecycle, business unit (BU), or data sensitivity.
+
+Does your business require limited visibility and discoverability of workloads?
+=Accounts provide a natural boundary for visibility and discoverability. Workloads cannot be accessed or viewed unless an administrator enables access for users in the other account.
+
+Does your business require isolation to minimize blast radius?
+=Blast-radius isolation by account provides a mechanism for limiting the impact of a critical event such as a security breach, if an AWS Region or Availability Zone becomes unavailable, account suspensions, etc. Separate accounts help define boundaries and provide natural blast-radius isolation.
+
+Does you business require strong isolation of recovery and/or auditing data?
+=Businesses that are required to control access and visibility to auditing data due to regulatory requirements can isolate their recovery data and/or auditing data in an account separate from where they run their workloads (e.g., writing CloudTrail logs to a different account).
+
+
+Slide 25:
+When you have multiple accounts, each account may have some level of relationship or dependency. For example, you may have a security account whose responsibility it is to ensure that all staff are compliant with company-wide security guidelines. The security auditor may be responsible for ensuring that only authorized users have access to read or modify sensitive data and instances or applications; auditors cannot access any of the resources that you are running, but they may have read-only access to describe resources in the account in order to audit. 
+
+Conversely, Dev/Test/Prod team members need access to relevant resources, applications, and data, but of course, they must not have access to account or user permissions.
+
+There may also be an account for the Admin team that oversees the administration of all accounts rather than having one admin group per account. 
+
+The Finance team focuses solely on spending and keeping everything within budget. In this case, the team does not have to be concerned with running Amazon EC2 instances, managing Amazon DynamoDB tables, etc. It only needs to care about who is spending how much on AWS resources. 
+
+Slide 26:
+You can switch roles within the AWS Management Console. 
+
+You can sign in to the console as an AWS Identity and Access Management (IAM) user or via federated single sign-on and then switch the console to manage another account without having to enter (or remember) another user name and password. 
+
+When switching roles, users get a new set of permissions.  If someone’s job function changes, rather editing one or more accounts, roles can be added or deleted as required.
+
+Slide 27:
+You can switch roles by using the AWS Management Console, the AWS CLI, or through the AWS APIs. You can then assume that role within the console and will no longer have permissions of the previous user you were logged in as. 
+
+To learn more about this issue, see the AWS Security Blog. Specifically: 
+For more information about the IAM cross-account access feature, see https://aws.amazon.com/blogs/security/enable-a-new-feature-in-the-aws-management-console-cross-account-access/ 
+For more information about switching IAM roles by using the API, see https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-api.html. 
+For more information about switching IAM roles by using the AWS CLI, see https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html#tutorial_cross-account-with-roles-3. 
+
+
+Slide 28:
+While the appropriate multi-account structure will vary based on your needs, there are a few structures that are commonly used. Customers also frequently use multiple account structures at once to suit their needs.
+
+The identity account structure allows for centralized management of your IAM identities and other identity management solutions. 
+
+Slide 29:
+Publishing account structures centrally control deployments of resources. For instance, if you&apos;re using AWS Service Catalog to manage your resources, or if your teams use custom AMIs and snapshots to deploy new resources, all of those things could be managed within one account to ensure that only those users who should be allowed to change those resources can do so.
+
+Slide 30:
+The logging account structure above is ideal for organizations that have one team or a small number of teams that need to manage logs from multiple sources.
+
+Slide 31:
+This slide has no Notes.
+
+Slide 32:
+AWS Organizations enables you to centrally apply policy-based controls across multiple accounts in the AWS Cloud. 
+
+You can consolidate your AWS accounts into an organization and arrange all AWS accounts into distinct organizational units. 
+
+Organizations include consolidated billing and account management capabilities to meet budgetary, security, and compliance needs.
+
+
+
+Slide 33:
+As an administrator of the master account of an organization, you can restrict which AWS services the users and roles in each member account can access. This restriction even overrides the administrators of member accounts in the organization. When Organizations blocks access to a service or action for a member account, a user or role in that account no longer has access to the  prohibited service or action.  This is true even if an administrator of a member account explicitly grants such permissions in an IAM policy. 
+
+Organization permissions overrule account permissions.
+
+IAM provides granular control over users and roles in individual accounts. Organizations expands that control to the account level by giving you control over what can be done by users and roles in an account or a group of accounts. The resulting permissions are the logical intersection of what is allowed by Organizations at the account level, and what permissions are explicitly granted by IAM at the user or role level within that account. Users can access only what is allowed by both Organizations policies and IAM policies. If either blocks an operation, it can’t be accessed.
+
+You can enable select AWS services to access accounts in your organization and perform actions on the resources in the accounts. When you configure another service and authorize it to integrate with your organization, Organizations creates an IAM service-linked role in each member account. 
+
+The service-linked role has predefined IAM permissions that allow the other service to perform specific tasks in your organization&apos;s accounts. For this to work, all accounts in an organization have a service-linked role that enables AWS Organizations to create other service-linked roles required by AWS services that you configure to perform organizational-level tasks. These additional service-linked roles come with policies that enable the specified service to perform only those tasks that are required by your configuration choices. 
+
+As a service that is accessed through computers in data centers around the world, AWS Organizations uses a distributed computing model called eventual consistency. 
+
+Any changes made in Organizations takes time to become visible from all possible endpoints. Some of the delay is from the time it takes to send data from server to server or from replication zone to replication zone. Organizations also uses caching to improve performance but, in some cases, this can add time; the change might not be visible until the previously cached data times out.
+
+Design global applications to account for potential delays and ensure that they work as expected even when a change made in one location is not instantly visible at another.
+
+For more information about AWS Organizations and Active Directory support, see https://aws.amazon.com/about-aws/whats-new/2018/10/aws-organizations-supports-aws-directory-service-multi-account-capabilities/ 
+
+For AWS Directory Service, see https://aws.amazon.com/directoryservice/   
+
+Slide 34:
+You can work with AWS Organizations in any of the following ways:
+
+AWS Management Console: The Organizations console is a browser-based interface that you can use to manage your organization and your AWS resources. You can perform any task in your organization by using the console.
+
+AWS Command Line Tools: The AWS command line tools allow you to issue commands at your system&apos;s command line to perform Organizations and AWS tasks, which can be faster and more convenient than using the console. The command line tools also are useful if you want to build scripts that perform AWS tasks.
+
+AWS SDKs: The AWS SDKs consist of libraries and sample code for various programming languages and platforms (for example, Java, Python, Ruby, .NET, iOS, and Android). The SDKs take care of tasks such as cryptographically signing requests, managing errors, and retrying requests automatically.
+
+Slide 35:
+This diagram shows a basic organization with seven accounts that are organized into four organizational units (OUs) under the root. The organization also has several policies that are attached to some of the OUs or directly to accounts. Definitions of each component follow.
+
+An organization is an entity that you create to consolidate your AWS accounts. You can use the AWS Organizations console to centrally view and manage all of your accounts within your organization. An organization has one master account along with zero or more member accounts. You can organize the accounts in a hierarchical, tree-like structure with a root at the top and organizational units nested under the root. Each account can be directly in the root, or placed in one of the OUs in the hierarchy. An organization has the functionality that is determined by the feature set that you enable.
+
+A root is the parent container for all the accounts for your organization. If you apply a policy to the root, it applies to all organizational unit (OUs) and accounts in the organization.
+
+An organization unit (OU) is a container for accounts within a root. An OU also can contain other OUs, enabling you to create a hierarchy that resembles an upside-down tree, with a root at the top and branches of OUs that reach down, ending in accounts that are the leaves of the tree. 
+
+When you attach a policy to one of the nodes in the hierarchy, it flows down and affects all the branches (OUs) and leaves (accounts) beneath it. An OU can have exactly one parent, and currently each account can be a member of exactly one OU.
+
+An account is a standard AWS account that contains your AWS resources. You can attach a policy to an account to apply controls to only that one account.
+
+An organization has one account that is designated as the master account. This is the account that creates the organization. The rest of the accounts that belong to an organization are called member accounts. From the organization&apos;s master account, you can create accounts in the organization, invite other existing accounts to the organization, remove accounts from the organization, manage invitations, and apply policies to entities (roots, OUs, or accounts) within the organization. An account can be a member of only one organization at a time.
+
+The master account has the responsibilities of a payer account and is responsible for paying all charges that are accrued by the member accounts. If you previously had a Consolidated Billing family of accounts, your accounts have been migrated to a new organization in AWS Organizations, and the payer account in your Consolidated Billing family has become the master account in your organization. All linked accounts in the Consolidated Billing family have become member accounts in the organization and continue to be linked to the master account. Your bills continue to reflect the relationship between the payer account and the linked accounts.
+
+An invitation is the process of asking another account to join your organization. An invitation can be issued only by the organization&apos;s master account and is extended to either the account ID or email address that is associated with the invited account. 
+
+After the invited account accepts an invitation, it becomes a member account in the organization. Invitations also can be sent to all current member accounts when the organization needs all members to approve the change from supporting only consolidated billing features to supporting all features in the organization. Invitations work by accounts exchanging handshakes. Although you might not see handshakes when you work in the AWS Organizations console, if you use the AWS CLI or AWS Organizations API, you must work directly with handshakes.
+
+A handshake is a multi-step process of exchanging information between two parties. One of its primary uses in AWS Organizations is to serve as the underlying implementation for invitations. Handshake messages are passed between and responded to by the handshake initiator and the recipient in such a way that it ensures that both parties always know what the current status is. 
+
+Handshakes also are used when changing the organization from supporting only consolidated billing features to supporting all features that Organizations offers. You generally need to directly interact with handshakes only if you work with the AWS Organizations API or command line tools such as the AWS CLI.
+
+A service control policy (SCP) is a policy that specifies the services and actions that users and roles can use in the accounts that the SCP affects. SCPs are similar to IAM permission policies except that they don&apos;t grant any permissions. Instead, SCPs are filters that allow only the specified services and actions to be used in affected accounts. Even if a user is granted full administrator permissions with an IAM permission policy, any access that is not explicitly allowed or that is explicitly denied by the SCPs affecting that account is blocked. For example, if you assign an SCP that allows only database service access to your &quot;database&quot; account, then any user, group, or role in that account is denied access to any other service&apos;s operations. SCPs are available only when you enable all features in your organization. 
+
+You can attach an SCP to the following:
+
+A root, which affects all accounts in the organization
+An OU, which affects all accounts in that OU and all accounts in any OUs in that OU subtree
+An individual account
+
+Slide 36:
+AWS Organizations has two available feature sets: all features and consolidated billing features. All organizations support consolidated billing, which provides basic management tools that you can use to centrally manage the accounts in your organization. If you enable all features, you continue to get all the consolidated billing features plus a set of advanced features such as SCPs, which give you fine-grained control over which services and actions that member accounts can access.
+
+All features: The complete feature set that is available to Organizations. It includes all the functionality of consolidated billing, plus it provides advanced features that give you more control over accounts in your organization. For example, when all features are enabled, the master account of the organization has full control over what member accounts can do. The master account can apply SCPs to restrict the services and actions that users (including the root user) and roles in an account can access, and can prevent member accounts from leaving the organization. 
+
+Consolidated billing:  The default features for an organization migrated from a consolidated billing family of accounts providing the same functionality as consolidated billing.  It does not include the advanced features of AWS Organizations such as the use of policies to restrict what users and roles in different accounts can do. To use this advanced functionality, you must enable all features in your organization.
+
+You can create an organization with all features already enabled, or you can enable all features in an organization that originally supported only the consolidated billing features. To enable all features, all invited member accounts must approve the change by accepting the invitation that is sent when the master account starts the process.
+
+Slide 37:
+Service control policies (SCPs) are one type of policy that you can use to manage your organization. SCPs enable you to restrict, at the account level of granularity, what services and actions the users, groups, and roles in those accounts can do.
+
+SCPs are available only in an organization that has all features enabled. SCPs aren&apos;t available if your organization has enabled only the consolidated billing features.
+
+SCPs are similar to IAM permission policies and use almost the exact same syntax. However, an SCP never grants permissions. 
+
+Instead, think of an SCP as a filter that enables you to restrict what service and actions can be accessed by users and roles in the accounts that you attach the SCP to. An SCP that is applied at the root cascades its permissions to the OUs below it. An OU at the next level down gets the mathematical intersection of the permissions that flow down from the parent root and the SCPs that are attached to the OU. 
+
+
+Accounts only have those permissions permitted by every parent above it. If a permission is blocked at any level above the account, either implicitly (by not being included in an Allow policy statement) or explicitly (by being included in a Deny policy statement), a user or role in the affected account cannot use that permission, even if the account administrator attaches the AdministratorAccess IAM policy with */* permissions to the user.
+
+Slide 38:
+Service Control Policies work in conjunction with AWS Identity and Access Management (IAM) to manage access to AWS services and features.
+
+Allow: You explicitly specify the access that is allowed. All other access is implicitly blocked. By default, AWS Organizations attaches an AWS managed policy called FullAWSAccess to all roots, OUs, and accounts. This ensures that, as you build your organization, nothing is blocked until you want it to be. This means, by default, all permissions are allowed. When you are ready to restrict permissions, you replace the FullAWSAccess policy with one that allows only the more limited, desired set of permissions. 
+
+Users and roles in the affected accounts can then exercise only that level of access, even if their IAM policies allow all actions. If you replace the default policy on the root, then all accounts in the organization are affected by the restrictions. You can&apos;t add them back at a lower level in the hierarchy because an SCP never grants permissions; it only filters them.
+
+Deny: You explicitly specify the access that is not allowed. All other access is allowed. In this scenario, all permissions are allowed unless explicitly blocked. This is the default behavior of AWS Organizations. By default, AWS Organizations attaches an AWS managed policy called FullAWSAccess to all roots, OUs, and accounts.
+
+
+
+This allows any account to access any service or operation with no Organizations-imposed restrictions. When using a deny policy, you typically leave the default FullAWSAccess policy in place (that allow &quot;all&quot;) but then attach additional policies that explicitly deny access to the unwanted services and actions. 
+
+Just as with IAM permission policies, an explicit deny of a service action overrides any allow of that action.
+
+Slide 39:
+In the Allow example, the SCP grants access to all Amazon EC2 and Amazon S3 service actions in the AWS account. All principals (account root, IAM user, and IAM role) in an account with this SCP applied will not be able to access any other actions, no matter which IAM policies are directly assigned to them. Those IAM policies must explicitly grant Amazon EC2 or Amazon S3 service actions for the principals to access them.
+
+In the Deny example, the SCP allows access to all AWS service actions except the Amazon S3 action, PutObject. All principals (account root, IAM user, and IAM role) with appropriate permissions assigned directly to them in an account with this SCP applied can access any action except the S3 PutObject action.
+
+Slide 40:
+In the example above, you create your organization and configure it with two AWS member accounts. 
+
+You create one of the member accounts in your organization and you invite the other account to join your organization. 
+
+Next, you use the a Service Control Policy to specify that account administrators can delegate only explicitly listed services and actions. This allows administrators to validate any new service that AWS introduces before they permit its use by anyone else in your company.   That way, if AWS introduces a new service, it remains prohibited until an administrator adds the service to the whitelist in the appropriate policy.
+
+Slide 41:
+AWS Organizations and IAM are complementary services that deliver access controls for the enterprise.
+
+Slide 42:
+You can use the consolidated billing feature in AWS Organizations to consolidate payment for multiple AWS accounts or multiple Amazon Internet Services Private Limited (AISPL) accounts. With consolidated billing, you can see a combined view of AWS charges incurred by all of your accounts. 
+
+You also can get a cost report for each member account that is associated with your master account. Consolidated billing is offered at no additional charge. AWS and AISPL accounts can&apos;t be consolidated together. AISPL is a local legal Indian entity that acts as a reseller for AWS services in India.
+
+Consolidated billing has the following benefits:
+
+One bill – You get one bill for multiple accounts.
+Easy tracking – You can easily track each account&apos;s charges and download the cost data in CSV format.
+Combined usage – If you have multiple accounts today, your charges might decrease because AWS combines usage from all accounts in the organization to qualify you for volume pricing discounts.
+
+Slide 43:
+If you previously signed up for consolidated billing on the AWS Billing and Cost Management console, your consolidated billing account family has been migrated automatically to a new organization in AWS Organizations. 
+
+Organizations gives you the same consolidated billing features as Billing and Cost Management, but also provides advanced features that give you more control over your accounts.
+
+
+
+Slide 44:
+When you used consolidated billing on the Billing and Cost Management console, you had one account that was designated as a payer account. The payer account paid the charges that were accrued by all the other accounts, known as linked accounts, in your consolidated billing family. 
+
+The same idea applies to AWS Organizations: Each organization has one account, called a master account, that pays the charges of all the member accounts in that organization. The member accounts are linked to the master account for billing purposes, just like the linked accounts in consolidated billing were linked to a payer account.
+
+
+Slide 45:
+You can use Amazon CloudWatch to monitor your AWS costs. You can create billing alerts that notify you when your usage of AWS services exceed thresholds. You specify these threshold amounts when you create the billing alerts. When your usage exceeds these costs, AWS sends you an email.
+
+You can specify different alerts for each individual linked account, and you can also specify one at the paying account level. 
+
+Slide 46:
+This slide has no Notes.
+
+Slide 48:
+This slide has no Notes.
+
+Slide 49:
+An on-premises infrastructure may have several applications that rely upon authentication using the credentials already set up for its users in Microsoft Active Directory. In order to run these applications in the cloud, you will need your cloud applications to use this on-premises Active Directory environment. 
+
+Slide 50:
+AWS Directory Service provides multiple ways to use Microsoft Active Directory with other AWS services. You can choose the directory service with the features you need at a cost that fits your budget.
+
+Use Simple AD if you need an inexpensive Active Directory–compatible service with the common directory features.
+Use AWS Directory Service for Microsoft Active Directory (Enterprise Edition), also known as AWS Microsoft AD, for a feature-rich Microsoft Active Directory hosted on the AWS Cloud.
+Use AD Connector for a simple way to connect your existing on-premises Active Directory to AWS.
+
+For more information about the AWS Directory Service options, see https://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html. 
+
+Slide 51:
+Simple AD is a Microsoft Active Directory–compatible directory from AWS Directory Service powered by Samba 4 that supports commonly used Active Directory features such as user accounts, group memberships, domain-joining Amazon Elastic Compute Cloud (Amazon EC2) instances running Linux and Microsoft Windows, Kerberos-based single sign-on (SSO), and group policies. This makes it easier to manage Amazon EC2 instances running Linux and Windows, and to deploy Windows applications in the AWS cloud.
+
+Many of applications and tools that require Microsoft Active Directory support can be used with Simple AD. User accounts in Simple AD can access AWS applications such as Amazon WorkSpaces, Amazon WorkDocs, or Amazon WorkMail. They can also use AWS Identity and Access Management roles to access the AWS Management Console and to manage AWS resources. Simple AD provides daily automated snapshots to enable point-in-time recovery.
+
+Note: You cannot set up trust relationships between Simple AD and other Active Directory domains. Other common features not supported by Simple AD include schema extensions, multi-factor authentication, communication over LDAPS, PowerShell AD cmdlets, and the transfer of FSMO roles. 
+
+Slide 52:
+AWS Directory Service for Microsoft Active Directory (Enterprise Edition), also known as AWS Microsoft AD, is a managed Microsoft Active Directory hosted on the AWS Cloud. It provides much of the functionality offered by Microsoft Active Directory plus integration with AWS applications. With the additional Active Directory functionality, you can, for example, easily set up trust relationships with your existing Active Directory domains to extend those directories to AWS services.
+
+Microsoft AD is your best choice if you have more than 5,000 and up to 50,000 users and need a trust relationship set up between an AWS hosted directory and your on-premises directories.
+
+Slide 53:
+Use AD Connector when you want to use your existing on-premises Microsoft AD with AWS services.  
+
+AD Connector forwards sign-in requests to your Active Directory domain controllers for authentication and provides the ability for applications to query the directory for data. After setup, you can use existing corporate credentials to sign on to AWS applications such as Amazon WorkSpaces, Amazon WorkDocs, or Amazon WorkMail. With the proper IAM permissions, you can also access the AWS Management Console and manage AWS resources such as Amazon EC2 instances or Amazon S3 buckets. 
+
+AD Connector can be used to enable multi-factor authentication by integrating with existing RADIUS-based MFA infrastructure to provide an additional layer of security when you access AWS applications.
+
+Adding new users/groups or updating passwords is done using standard directory administration tools with your on-premises directory. AD Connector enables the consistent enforcement of existing security policies such as password expiration, password history, and account lockouts, whether users are accessing resources on-premises or in the AWS Cloud.
+
+Slide 54:
+Integration between an example on-premises Active Directory environment and a VPC in AWS can be accomplished using AWS Directory Service. 
+
+In this example, the on-premises network is connected to a VPC using a VPN connection with a customer gateway defined on the data center side and a virtual private gateway defined on the AWS side. 
+
+An AD Connector is assigned for each subnet in the VPC that needs to integrate with the Active Directory service on the internal network. The AD Connector requires the fully qualified domain name of the AD domain controller, its NetBIOS name, and a username/password used to authenticate against the directory. 
+
+
+
+Slide 55:
+Although the solution in the previous slide works when you have a single AWS account, this solution shows how to extend this functionality across multiple AWS accounts. One solution is to create a new AD Connector for every subnet in every VPC in every account that needs to utilize Active Directory. While possible, this requires that each of these VPCs also has its own VPN connection back to the on-premises network. That creates multiple potential entry points back to the corporate network, which would be more to manage from a security standpoint.
+
+Another option is to use Account 1 as the interface to the corporate data center and then use VPC peering with VPCs in other AWS accounts, so that those accounts can access the on-premises Active Directory service. This reduces the number of AWS accounts that must establish their own VPN connection back to the corporate network, thus allowing for greater network isolation. 
+
+In this scenario, the IP ranges of the various VPCs hosted in these various accounts must not overlap with one another and must not overlap with the IP address range of the on-premises network. 
+
+Slide 56:
+For more information about Simple Active Directory, see https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html. 
+
+For more information about AWS Managed Microsoft AD, see https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html. 
+
+For more information about Active Directory Connector, see https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_ad_connector.html.  
+
+  
+
+Slide 57:
+This slide has no Notes.
+
+Slide 58:
+So what are tags? They have a few important characteristics:
+
+Tags are key/value pairs that can be attached to AWS resources. 
+Tags are metadata: They don’t actually do anything, they’re for labeling purposes. 
+Tags are (sometimes) inherited. Services such as Auto Scaling, AWS CloudFormation, and AWS Elastic Beanstalk can create resources, such as Amazon Relational Database Service (Amazon RDS) or Amazon Elastic Compute Cloud (Amazon EC2) instances. Generally, whenever one of these services creates a resource, it will tag that resource with a reference to itself. Unlike built-in AWS tags, these tags do count toward your total tag limit for a resource.
+
+Examples of common tags:
+
+Environment (development, production, test)
+Application
+Owner
+Department
+Cost Center
+Purpose
+
+Slide 59:
+Tags are included in detailed billing reports. This enables your AWS cost to be analyzed and divided across multiple dimensions and aggregation levels. 
+
+You can use this financial analysis either for showback or chargeback cost accounting.
+
+Slide 60:
+The AWS platform does not mandate or enforce the use or consistency of tags within an account. The AWS tagging system is an intentionally freeform system; it is relatively free from syntactical or implied usage constraints. Establish a tagging strategy that would be most effective to your organization structure and how you want to sort out your billing report. 
+
+Common tagging scheme examples:
+
+Technical Tags:
+Name – Used to identify individual resources 
+Application ID – Used to identify disparate resources that are related to a specific application 
+Application Role – Used to describe the function of a particular resource
+Cluster – Used to identify resource farms that share a common configuration and that perform a specific function for an application 
+Environment – Used to distinguish between development, test, and production infrastructure 
+Version – Used to help distinguish between different versions of resources or applications 
+
+Tags for Automation: 
+Date/Time – Used to identify the date a resource should be started, stopped, deleted, or rotated 
+Opt in/Opt out – Used to indicate whether a resource should be automatically included in an automated activity such as starting, stopping, or resizing instances 
+Security – Used to determine security requirements, such as encryption, the enabling of Amazon VPC Flow Logs, and also to identify route tables or security groups that deserve extra scrutiny
+
+Business Tags 
+Owner – Used to identify who is responsible for the resource 
+Cost Center/Business Unit – Used to identify the cost center or business unit associated with a resource; typically for cost allocation and tracking 
+Customer – Used to identify a specific client that a particular group of resources serves 
+Project – Used to identify the project(s) the resource supports
+
+Security Tags 
+Confidentiality – An identifier for the specific data-confidentiality level a resource supports 
+Compliance – An identifier for workloads designed to adhere to specific compliance requirements 
+
+Slide 61:
+You can use AWS Resource Groups to organize your AWS resources. Resource groups make it easier to manage and automate tasks on large numbers of resources at one time. 
+
+In AWS, a resource is an entity that you can work like an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket. If you work with multiple resources, it can be useful to manage them as a group rather than move from one AWS service to another for each task. 
+
+Bulk actions can include:
+Applying updates or security patches.
+Upgrading applications.
+Opening or closing ports to network traffic.
+Collecting specific log and monitoring data from your fleet of instances.
+
+Slide 62:
+A resource group is a collection of AWS resources that are all in the same AWS region, and that match criteria provided in a query. In AWS Resource Groups, there are two types of queries on which you can build a group. Both query types include resources that are specified in the format AWS::service::resource.
+
+Tag-based
+
+Tag-based queries include lists of resources and tags. Tags are keys that help identify and sort your resources within your organization. Optionally, tags include values for keys.
+
+AWS CloudFormation stack-based
+
+In an AWS CloudFormation stack-based query, you choose an AWS CloudFormation stack in your account in the current region, and then choose resource types within the stack that you want to be in the group. You can base your query on only one AWS CloudFormation stack.
+
+Nesting
+
+Resource groups can be nested; a resource group can contain existing resource groups in the same region.
+
+Use Cases for Resource Groups
+
+By default, the AWS Management Console is organized by AWS service. But with AWS Resource Groups, you can create a custom console that organizes and consolidates information based on criteria specified in tags or the resources in an AWS CloudFormation stack. The following list describes some of the cases in which resource grouping can help organize your resources.
+
+An application that has different phases, such as development, staging, and production.
+Projects managed by multiple departments or individuals.
+A set of AWS resources that you use together for a common project or that you want to manage or monitor as a group.
+A set of resources related to applications that run on a specific platform, such as Android or iOS.
+
+For example, you are developing a web application, and you are maintaining separate sets of resources for your alpha, beta, and release stages. Each version runs on Amazon EC2 with an Amazon Elastic Block Store (Amazon EBS) storage volume. You use Elastic Load Balancing (ELB) to manage traffic and Amazon Route 53 to manage your domain. Without AWS Resource Groups, you might have to access multiple consoles just to check the status of your services or modify the settings for one version of your application.
+
+With AWS Resource Groups, a single page is used to view and manage resources. For example, let’s say you use the tool to create a resource group for each version—alpha, beta, and release—of your application. To check your resources for the alpha version of your application, open your resource group then view the consolidated information on the resource group page. To modify a specific resource, choose the resource&apos;s links on your resource group page to access the service console that has the settings that you need.
+
+For more information about AWS Resource Groups, see https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html. 
+
+
+
+Slide 63:
+You can also use tagging to provide greater visibility into resources that are deployed across your accounts. 
+
+In the above example, AWS Config detects that a new EC2 instance is not properly tagged and logs its discovery together with a record of the API call that launched the instance.
+
+Slide 64:
+In this example, an instance is tagged, but the instance&apos;s configuration does not align with the tag it&apos;s been given, and so AWS Config discovers this and logs it as well.
+
+Slide 65:
+This slide has no Notes.
+</amazon:domain>
+</speak>

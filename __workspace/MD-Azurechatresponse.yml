@@ -1,0 +1,18 @@
+
+---  
+title: AWS Update Amazon Machine Image Block Public Access (AMI BPA) Enabled by Default  
+date: {current_date}  
+Author: Nando Lutgerink  
+DallE-prompt: A visual representation of AWS's new default setting for AMI BPA across all AWS Regions starting from October 16, 2023  
+image: DallEImg.jpg  
+imageAlt: An illustrative image depicting AWS's AMI BPA feature and its implications for users.  
+description: Important AWS update informing users about the new default setting for AMI BPA across all AWS Regions starting from October 16, 2023. Understand the implications and the steps to take for both new and existing accounts.  
+introduction: In a significant move to enhance security, AWS has announced that starting October 16, 2023, Amazon Machine Image Block Public Access (AMI BPA) will be enabled by default across all AWS Regions. This guide will help you understand what this means for your accounts and how to manage your settings accordingly.  
+tags:  
+  - AWS  
+  - AMI  
+  - BPA  
+  - Security  
+---  
+   
+Please replace `{current_date}` with the actual date when creating the markdown. The DallE-prompt and imageAlt are created based on the content of the markdown. They aim to provide a visual and textual representation of the main theme of the update. The introduction provides a brief overview of the article and sets the context for the reader. The tags are chosen to highlight the key AWS services discussed in the update.
