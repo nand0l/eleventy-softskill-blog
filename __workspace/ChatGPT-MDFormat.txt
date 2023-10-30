@@ -1,18 +1,18 @@
----  
-title: AWS Update Amazon Machine Image Block Public Access (AMI BPA) Enabled by Default  
-date: {current_date}  
-Author: Nando Lutgerink  
-DallE-prompt: A visual representation of AWS's new default setting for AMI BPA across all AWS Regions starting from October 16, 2023  
-image: awsbpa.png  
-imageAlt: An illustrative image depicting AWS's AMI BPA feature and its implications for users.  
-description: Important AWS update informing users about the new default setting for AMI BPA across all AWS Regions starting from October 16, 2023. Understand the implications and the steps to take for both new and existing accounts.  
-introduction: In a significant move to enhance security, AWS has announced that starting October 16, 2023, Amazon Machine Image Block Public Access (AMI BPA) will be enabled by default across all AWS Regions. This guide will help you understand what this means for your accounts and how to manage your settings accordingly.  
-tags:  
-  - AWS  
-  - AMI  
-  - BPA  
-  - Security  
----  
+---
+title: AWS Update Amazon Machine Image Block Public Access (AMI BPA) Enabled by Default
+date: {current_date}
+Author: Nando Lutgerink
+DallE-prompt: A visual representation of AWS's new default setting for AMI BPA across all AWS Regions starting from October 16, 2023
+image: awsbpa.png
+imageAlt: An illustrative image depicting AWS's AMI BPA feature and its implications for users.
+description: Important AWS update informing users about the new default setting for AMI BPA across all AWS Regions starting from October 16, 2023. Understand the implications and the steps to take for both new and existing accounts.
+introduction: In a significant move to enhance security, AWS has announced that starting October 16, 2023, Amazon Machine Image Block Public Access (AMI BPA) will be enabled by default across all AWS Regions. This guide will help you understand what this means for your accounts and how to manage your settings accordingly.
+tags:
+  - AWS
+  - AMI
+  - BPA
+  - Security
+---
 
 Beginning **October 16, 2023**, *Amazon Machine Image Block Public Access (AMI BPA)* will be the default setting across **all AWS Regions**.
 
@@ -56,14 +56,14 @@ Warm regards,
 _____________
 I want to generate the following header:
 ---
-title: 
+title:
 date: (current date)
 Author: admin
 DallE-prompt: this prompt is generated from the content
 image: s3-bucket004.jpg
 imageAlt: The required alt attribute specifies an alternate text for an image, if the image cannot be displayed.
 description: Important AWS update informing users about the new default setting for AMI BPA across all AWS Regions starting from October 16, 2023. Understand the implications and the steps to take for both new and existing accounts.
-introduction: introduction to the article generated from the content 
+introduction: introduction to the article generated from the content
 tags:
   - AWS
   - AMI
@@ -73,12 +73,12 @@ tags:
 
 In The header:
 The title can be taken of the content,
-The date is the current date of creation,
+The date is the current date of creation, use the format: yyy-mm-dd
 The autor can be "Nando Lutgerink"
 image: set this to a default: "DallEImg.jpg"
 I want a DallE-prompt to use for creating an image at Dall-e, this prompt is generated from the content
 I want a imageAlt to use for alt attribute, this prompt is generated from the DallE-prompt
-description:  is a short description of the content of the file that can be used as Metadata in the html header 
-introduction: introduction to the article generated from the content 
+description:  is a short description of the content of the file that can be used as Metadata in the html header
+introduction: introduction to the article generated from the content
 Tags: a list of tags that can be used to collect articles thar are about the same services, i want focus on any AWS services that are mentioned
 If I ask to rewrite an markdown, I want you to include a header that includes a title, date, description, image, imageAlt, and a description.

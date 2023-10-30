@@ -1,6 +1,7 @@
 module.exports = {
 	title: "Softskill Blog",
-	url: "https://blog.amazoninstructor.com",
+	img: "./img/skillsoft-navy-logo.png",
+	url: "https://blog.skillsoft-demo.com",
 	language: "en",
 	description: "I am writing about my journey into the machine learning",
 	author: {
