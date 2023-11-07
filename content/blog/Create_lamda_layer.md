@@ -4,7 +4,7 @@ date: 2023-11-07
 image-prompt: An image of an EC2 instance dashboard with a highlighted section for Lambda layer creation and package management
 image: aws-lambda-001.jpeg
 imageAlt: EC2 instance dashboard with Lambda layer management
-description: Step-by-step guide to creating a Lambda layer on an EC2 instance, including setting up a virtual environment and using AWS CLI for deployment.
+description: Step-by-step guide to create a Lambda layer on an EC2 instance, including setting up a virtual environment and using AWS CLI for deployment.
 introduction: This article walks through the process of setting up a virtual environment on an EC2 instance, creating a Lambda layer with dependencies, and deploying it using AWS CLI.
 tags:
   - AWS
@@ -50,8 +50,10 @@ aws lambda publish-layer-version \
     --layer-name Data-Preprocessing \
     --description "My Python layer" \
     --zip-file fileb://lambda-layer.zip \
-    --compatible-runtimes python3.7
+    --compatible-runtimes python3.7 python3.8 python3.9 python3.10 python3.11
 ```
 
 Now you can use your layer in your lambda functions.
+
+**Note:** In this example the layer is compatible with 5 lambda versions
 
