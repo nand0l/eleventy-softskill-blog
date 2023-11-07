@@ -26,12 +26,13 @@
 		<style>{% getBundle "css" %}</style>
 	</head>
 	<body>
+		{% include "../disclaimer.html" %}
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<header class="header">
 			<div class="title">
-				<a href="/" class="home-link"><img src=../../{{metadata.img}} height=50></a>
-{#../../#}
+				<a href="/" class="home-link"><img class="logo" src=../../{{metadata.img}}></a>
+				{#added  ../../ to make sure the logo is displayed#}
 			</div>
 			<nav class="nav">
 				<h2 class="visually-hidden">Top level navigation menu</h2>
@@ -53,6 +54,6 @@
 		<footer>
 			<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 		</footer>
-
+		<script src="/js/disclaimer.js" defer></script>
 	</body>
 </html>

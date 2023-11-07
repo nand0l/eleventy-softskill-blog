@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   --grey-s01: #070808;
@@ -98,8 +99,10 @@
   --darkslategrey: #2f4f4f;
   --black: #000000;
   --background-color:var(--gainsboro);
-  --text-color-link-visited: var(--c-dark-navy);
+  --text-color-link-visited: var(--c-navy);
   --c-text-color: var(--c-navy);
+  --basic-text-font: "Noto Sans", sans-serif;
+  --basic-header-font: "Montserrat", sans-serif;
 }
 
 /* Global stylesheet */
@@ -111,7 +114,7 @@ html,
 body {
   padding: 0;
   margin: 0 auto;
-  font-family: var(--font-family);
+  font-family: var(--basic-text-font);
   color: var(--text-color);
   background-color: var(--background-color);
 }
@@ -157,6 +160,7 @@ html {
   width: auto; /* Take the width of the image. */
   height: 50px; /* Set the height to 50 pixels. */
   overflow: hidden; /* Hide anything that exceeds the container's dimensions. */
+  padding-left: 0.5em;
 }
 
 .image-crop img {
@@ -170,6 +174,7 @@ html {
   margin-right: auto;
   width: 50%;
   height: "auto";
+  padding-bottom: 0.95em;
 }
 p:last-child {
   margin-bottom: 0;
@@ -177,7 +182,10 @@ p:last-child {
 p {
   line-height: 1.5;
 }
-
+.description{
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+}
 li {
   line-height: 1.5;
 }
@@ -266,10 +274,15 @@ header {
   font-weight: 700;
   margin-right: 2em;
 }
+
 .home-link:link:not(:hover) {
   text-decoration: none;
 }
 
+/* top left logo */
+img.logo {
+  height: 50px;
+}
 /* Nav */
 .nav {
   display: flex;
@@ -312,7 +325,7 @@ header {
 }
 .postlist-date,
 .postlist-item:before {
-  font-family: Montserrat, sans-serif;
+  font-family: var(--basic-header-font);
   font-size: 0.8125em; /* 13px /16 */
   color: var(--color-gray-90);
 }
@@ -320,11 +333,11 @@ header {
   word-spacing: -0.5px;
 }
 .postlist-link {
-  font-family: Montserrat, sans-serif;
+  font-family: var(--basic-header-font);
   font-size: 1.1875em; /* 19px /16 */
   font-weight: 700;
   flex-basis: calc(100% - 1.5rem);
-  padding-left: 0.25em;
+  padding-left: 0em;
   padding-right: 0.5em;
   text-underline-position: from-font;
   text-underline-offset: 0;
@@ -333,7 +346,9 @@ header {
 .postlist-item-active .postlist-link {
   font-weight: bold;
 }
-
+li.postlist-item:before{
+  color:transparent
+}
 /* Tags */
 .post-tag {
   display: inline-flex;
@@ -353,6 +368,7 @@ header {
   gap: 0.5em;
   list-style: none;
   padding: 0;
+  padding-bottom: 0.95em;
   margin: 0;
 }
 .post-metadata time {
@@ -361,7 +377,7 @@ header {
 
 /* Direct Links / Markdown Headers */
 .header {
-  font-family: Montserrat, sans-serif;
+  font-family: var(--basic-header-font);
  color: var(--c-dark-navy);
 }
 .header-anchor {

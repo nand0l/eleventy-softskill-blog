@@ -1,0 +1,11 @@
+# git-changers.md
+
+taken up in text expander:
+
+```bash
+ git config --global credential.helper '!aws codecommit credential-helper $@ --profile nlu-skillsoft'
+```
+
+```bash
+git config --global credential.helper '!aws codecommit credential-helper $@ --profile default'
+```

@@ -6,7 +6,6 @@ body {
   font-weight: 600;
   line-height: 1;
   text-align: left;
-  font-family: Montserrat, sans-serif;
   font-size: 100%;
 }
 p {
@@ -14,7 +13,11 @@ p {
   font-weight: 300;
   margin: 0 0 2em;
   padding: 0;
-  font-family: Spectral, serif;
 }
 
- 
+.disclaimer-content{
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+}

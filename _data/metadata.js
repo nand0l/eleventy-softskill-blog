@@ -1,5 +1,5 @@
 module.exports = {
-	title: "Softskill Blog",
+	title: "SkillSoft Blog",
 	img: "./img/skillsoft-navy-logo.png",
 	url: "https://blog.skillsoft-demo.com",
 	language: "en",
