@@ -13,7 +13,8 @@ A starter repository showing how to build a blog with the [Eleventy](https://www
 - create a MarkDown file with the article
   - Make sure all the formatting is in place
 - Create the header for the article
-  - Use [Azure OpenAI](https://oai.azure.com/portal/bc4c219331ac44a588776889b92083b8/chat?tenantid=50361608-aa23-494d-a233-2fd14d6a03f4) to create this header.
+  - Use [This Engigine](https://chat.openai.com/g/g-cLvfBdQaP-create-ssblog) to create this header.
+    - Sim ply paste in the complete article
   - This header will look like:
 
 ```markdown
@@ -36,7 +37,7 @@ tags:
 ```
 
 - paste the output in the original MD-file replacing the title
-- copy the text from the key: *image-prompt* into [Bing Image Creator](https://www.bing.com/create)
+- copy the text from the key: *image-prompt* into [Bing Image Creator](https://chat.openai.com/g/g-2fkFE8rbu-dall-e)
 - pick the picture and download
 - the is an [Background Remover](https://www.remove.bg/) where you can remove the background from your picture.
 - download the (free) preview picture

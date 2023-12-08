@@ -103,6 +103,7 @@
   --c-text-color: var(--c-navy);
   --basic-text-font: "Noto Sans", sans-serif;
   --basic-header-font: "Montserrat", sans-serif;
+  --font-family-monospace: "Courier", monospace;
 }
 
 /* Global stylesheet */
@@ -188,6 +189,7 @@ p {
 }
 li {
   line-height: 1.5;
+  font-weight: 200;
 }
 
 a[href] {
@@ -240,6 +242,7 @@ table th {
 
 pre,
 code {
+  background-color: lightgray;
   font-family: var(--font-family-monospace);
 }
 pre:not([class*="language-"]) {
