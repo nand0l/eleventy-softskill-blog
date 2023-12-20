@@ -148,6 +148,7 @@ Remember, the key to mastering these libraries is consistent practice and applic
 ### requrements.txt
 
 this is the content of my `requirements.txt` feel free to use it.
+
 ```bash
 bokeh==3.3.2
 contourpy==1.2.0
