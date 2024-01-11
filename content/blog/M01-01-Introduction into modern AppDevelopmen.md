@@ -6,6 +6,7 @@ image: aws-ml-basics-001.png
 imageAlt: Illustration of microservices network and cloud representing serverless architecture
 description: Explore the integration of serverless architecture and microservices in modern application development, emphasizing security, flexibility, and forward compatibility.
 introduction: This module explores the integration of serverless architecture and microservices, focusing on their roles in modern application development, security considerations, and strategies for forward compatibility and input handling.
+audiofile: https://s3.eu-central-1.amazonaws.com/skillsoft-demo.net/polly/M01-01-Introduction_into_modern_AppDevelopmen.15b683ca-a020-402b-8864-a020e9f95889.mp3
 tags:
   - Serverless Architecture
   - Microservices
@@ -16,6 +17,7 @@ tags:
   - Forward Compatibility
   - Input Handling
 ---
+
 
 **Introduction to Building Modern Serverless Applications:**
 The landscape of software development has undergone a dramatic transformation, shifting from traditional monolithic structures to serverless architectures. This change represents a revolution in how we conceive, build, and deploy software, characterized by its flexibility, scalability, and cost-efficiency. Serverless computing, transcending even microservices, allows developers to focus on their code while the underlying infrastructure is managed by cloud providers. This ecosystem includes diverse services like AWS Lambda, Amazon S3, Amazon DynamoDB, Amazon SNS, and Amazon SQS, each playing a vital role in enabling the construction of sophisticated, scalable applications. This course aims to delve into these services, exploring their integration and best practices in serverless architecture.

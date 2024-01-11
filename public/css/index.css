@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
   --grey-s01: #070808;
@@ -98,7 +98,7 @@
   --slategrey: #708090;
   --darkslategrey: #2f4f4f;
   --black: #000000;
-  --background-color:var(--gainsboro);
+  --background-color: var(--gainsboro);
   --text-color-link-visited: var(--c-navy);
   --c-text-color: var(--c-navy);
   --basic-text-font: "Noto Sans", sans-serif;
@@ -183,9 +183,10 @@ p:last-child {
 p {
   line-height: 1.5;
 }
-.description{
-  padding-top: 0.75em;
-  padding-bottom: 0.75em;
+.description {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.75rem;
 }
 li {
   line-height: 1.5;
@@ -203,12 +204,9 @@ a[href]:active {
   color: var(--c-navy);
   text-decoration-color: var(--amaranth-t03);
 }
-.summary--image{
+.summary--image {
   color: transparent;
 }
-
-
-
 
 main {
   padding: 2rem 10rem 0;
@@ -316,7 +314,7 @@ img.logo {
   flex-wrap: wrap;
   align-items: baseline;
   counter-increment: start-from -1;
-  margin-bottom: 1em;
+  margin-bottom: 0em;
 }
 .postlist-item:before {
   display: inline-block;
@@ -349,8 +347,8 @@ img.logo {
 .postlist-item-active .postlist-link {
   font-weight: bold;
 }
-li.postlist-item:before{
-  color:transparent
+li.postlist-item:before {
+  color: transparent;
 }
 /* Tags */
 .post-tag {
@@ -377,11 +375,13 @@ li.postlist-item:before{
 .post-metadata time {
   margin-right: 1em;
 }
-
+.datefield {
+  margin: 0rem;
+}
 /* Direct Links / Markdown Headers */
 .header {
   font-family: var(--basic-header-font);
- color: var(--c-dark-navy);
+  color: var(--c-dark-navy);
 }
 .header-anchor {
   text-decoration: none;
@@ -413,6 +413,12 @@ ol {
 
 ol > li {
   position: relative;
+}
+.audioplayer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust the height as needed */
 }
 
 @media only screen and (max-width: 600px) {
