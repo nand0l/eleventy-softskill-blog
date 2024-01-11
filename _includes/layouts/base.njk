@@ -1,59 +1,59 @@
 <!doctype html>
 <html lang="{{ metadata.language }}">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{ title or metadata.title }}</title>
-		<meta name="description" content="{{ description or metadata.description }}">
-		<meta name="generator" content="{{ eleventy.generator }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title or metadata.title }}</title>
+        <meta name="description" content="{{ description or metadata.description }}">
+        <meta name="generator" content="{{ eleventy.generator }}">
 
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+        <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+        <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
 
-		{#- Add an arbitrary string to the bundle #}
-		{%- css %}* { box-sizing: border-box; }{% endcss %}
+        {#- Add an arbitrary string to the bundle #}
+        {%- css %}* { box-sizing: border-box; }{% endcss %}
 
-		{#- Add the contents of a file to the bundle #}
-		{%- css %}
-			{% include "public/css/index.css" %}
-			{% include "public/css/skillsoft.css" %}
+        {#- Add the contents of a file to the bundle #}
+        {%- css %}
+            {% include "public/css/index.css" %}
+            {% include "public/css/skillsoft.css" %}
 
 
-		{% endcss %}
-		{# {%- css %}{% include "public/css/index.css" %}{% endcss %} #}
+        {% endcss %}
+        {# {%- css %}{% include "public/css/index.css" %}{% endcss %} #}
 
-		{#- Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
-		<style>{% getBundle "css" %}</style>
-	</head>
-	<body>
-		{% include "../disclaimer.html" %}
-		<a href="#skip" class="visually-hidden">Skip to main content</a>
+        {#- Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
+        <style>{% getBundle "css" %}</style>
+    </head>
+    <body>
+        {% include "../disclaimer.html" %}
+        <a href="#skip" class="visually-hidden">Skip to main content</a>
 
-		<header class="header">
-			<div class="title">
-				<a href="/" class="home-link"><img class="logo" src=../../{{metadata.img}}></a>
-				{#added  ../../ to make sure the logo is displayed#}
-			</div>
-			<nav class="nav">
-				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
-				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-				{%- endfor %}
-				</ul>
-			</nav>
-		</header>
+        <header class="header">
+            <div class="title">
+                <a href="/" class="home-link"><img class="logo" src=../../{{metadata.img}}></a>
+                {#added  ../../ to make sure the logo is displayed#}
+            </div>
+            <nav class="nav">
+                <h2 class="visually-hidden">Top level navigation menu</h2>
+                <ul class="nav">
+                {%- for entry in collections.all | eleventyNavigation %}
+                    <li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+                {%- endfor %}
+                </ul>
+            </nav>
+        </header>
 
-		<main id="skip">
-			<h1>{{title}}</h1>
-			<img class="mainpicture" src="../../img/{{image}}" alt="{{imageAlt}}">
-			<p>{{description}}</p>
-			{{ content | safe }}
-		</main>
+        <main id="skip">
+            <h1>{{title}}</h1>
+            <img class="mainpicture" src="../../img/{{image}}" alt="{{imageAlt}}">
+            <p>{{description}}</p>
+            {{ content | safe }}
+        </main>
 
-		<footer>
-			<!-- Current page: {{ page.url | htmlBaseUrl }} -->
-		</footer>
-		<script src="/js/disclaimer.js" defer></script>
-	</body>
+        <footer>
+            <!-- Current page: {{ page.url | htmlBaseUrl }} -->
+        </footer>
+        <script src="/js/disclaimer.js" defer></script>
+    </body>
 </html>

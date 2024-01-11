@@ -1,29 +1,29 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"editor.formatOnSaveMode": "file",
-		"editor.formatOnSave": true,
-		"editor.formatOnPaste": true,
-		"editor.codeActionsOnSave": {
-			"source.organizeImports": "explicit"
-		},
-		"python.formatting.provider": "black",
-		"python.formatting.blackArgs": [
-			"--line-length = 79"
-		],
-		"python.linting.enabled": true,
-		"python.analysis.typeCheckingMode": "basic",
-		"python.analysis.diagnosticSeverityOverrides": {
-			"reportGeneralTypeIssues": "none"
-		},
-		"window.zoomLevel": 1,
-		"workbench.colorTheme": "Default Dark+",
-		"workbench.colorCustomizations": {
-			"titleBar.activeBackground": "#3c8945",
-		}
-	}
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "editor.formatOnSaveMode": "file",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "python.formatting.provider": "black",
+        "python.formatting.blackArgs": [
+            "--line-length = 79"
+        ],
+        "python.linting.enabled": true,
+        "python.analysis.typeCheckingMode": "basic",
+        "python.analysis.diagnosticSeverityOverrides": {
+            "reportGeneralTypeIssues": "none"
+        },
+        "window.zoomLevel": 1,
+        "workbench.colorTheme": "Default Dark+",
+        "workbench.colorCustomizations": {
+            "titleBar.activeBackground": "#3c8945",
+        }
+    }
 }

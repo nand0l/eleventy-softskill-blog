@@ -7,17 +7,17 @@ layout: layouts/post-base.njk
 {#<h1>{{ title }}</h1>#}
 
 <ul class="post-metadata">
-	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
-	{%- for tag in tags | filterTagList %}
-	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
-	{%- endfor %}
+    <li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
+    {%- for tag in tags | filterTagList %}
+    {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+    <li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
+    {%- endfor %}
 </ul><br/>
 
 {# Check if audiofile is defined in the front matter #}
 {% if audiofile %}
     <div class='audioplayer'>
-        <audio controls>
+        <audio controls controlsList="nodownload">
             <source src="{{ audiofile }}" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
@@ -31,8 +31,8 @@ layout: layouts/post-base.njk
 {%- set nextPost = collections.posts | getNextCollectionItem %}
 {%- if nextPost or previousPost %}
 <ul class="links-nextprev">
-	{%- if previousPost %}<li>Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-	{%- if nextPost %}<li>Next: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+    {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+    {%- if nextPost %}<li>Next: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
 </ul>
 {%- endif %}
 {%- endif %}
