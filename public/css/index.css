@@ -173,8 +173,8 @@ html {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  height: "auto";
+  width: 25%;
+  height: auto;
   padding-bottom: 0.95em;
 }
 p:last-child {
