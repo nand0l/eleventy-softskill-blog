@@ -1,23 +1,10 @@
----
-title: What is Amazon API Gateway
-date: 2024-03-13
-image-prompt: An illustrated scene showing a vibrant and complex network of pathways and nodes, symbolizing the intricate processes and connections within Amazon API Gateway as it facilitates communication between various services and applications.
-image: aws-apigw001.png
-imageAlt: An abstract representation of Amazon API Gateway as a complex network facilitating seamless API communication.
-description: Learn about Amazon API Gateway, the AWS service crucial for creating, maintaining, and securing APIs at any scale. Perfect for developers looking to integrate AWS or third-party services.
-introduction: Amazon API Gateway is a pivotal AWS service that simplifies the creation, publication, maintenance, and security of REST, HTTP, and WebSocket APIs. It supports scalable and secure API development for AWS and web services integration.
-audiofile: https://s3.us-east-1.amazonaws.com/polly.skillsoft-demo.net/polly/apigw2024.md.335e1f28-85a2-4b6c-ad30-966ee5c20b83.mp3
-tags:
-  - API Gateway
-  - REST
-  - HTTP
-  - WebSocket
-  - AWS Services
----
+# Amazon API Gateway
+Create, maintain, and secure APIs at any scale
+Free AWS Training | Focus on the cloud skills most relevant to you—choose from 600+ digital courses across 30+ AWS solutions
 
 Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. APIs act as the "front door" for applications to access data, business logic, or functionality from your backend services. Using API Gateway, you can create RESTful APIs and WebSocket APIs that enable real-time two-way communication applications. API Gateway supports containerized and serverless workloads, as well as web applications.
 
-Amazon API Gateway handles all the tasks involved in accepting and processing up to hundreds of thousands of concurrent API calls, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management. API Gateway has no minimum fees or startup costs. You pay for the API calls you receive and the amount of data transferred out and, with the API Gateway tiered pricing model, you can reduce your cost as your API usage scales.
+API Gateway handles all the tasks involved in accepting and processing up to hundreds of thousands of concurrent API calls, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management. API Gateway has no minimum fees or startup costs. You pay for the API calls you receive and the amount of data transferred out and, with the API Gateway tiered pricing model, you can reduce your cost as your API usage scales.
 
 ## API types
 Amazon API Gateway supports different types of APIs tailored to specific use cases.
