@@ -188,11 +188,16 @@ p {
   padding-bottom: 0.5em;
   margin-bottom: 0.75rem;
 }
-li {
+ul {
+  margin:  0;
   line-height: 1.5;
   font-weight: 200;
 }
-
+li {
+  padding-top: 0.5em;
+  line-height: 1.5;
+  font-weight: 200;
+}
 a[href] {
   color: var(--text-color-link);
 }

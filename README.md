@@ -14,7 +14,7 @@ A starter repository showing how to build a blog with the [Eleventy](https://www
   - Make sure all the formatting is in place
 - Create the header for the article
   - Use [This Engigine](https://chat.openai.com/g/g-cLvfBdQaP-create-ssblog) to create this header.
-    - Sim ply paste in the complete article
+    - Simply paste in the complete article
   - This header will look like:
 
 ```markdown
@@ -25,19 +25,20 @@ image: placeholder.jpg
 imageAlt: AWS Control Tower  
 description: An overview of AWS Control Tower, a service that provides a straightforward way to set up and govern a secure, compliant, multi-account AWS environment based on best practices. It discusses features such as landing zone, controls, account factory, dashboard, and its interaction with other AWS services.  
 introduction: AWS Control Tower simplifies the process of setting up and governing a multi-account AWS environment, following prescriptive best practices. It offers features such as a landing zone, controls (or guardrails), an account factory, and a dashboard. It also interacts seamlessly with other AWS services, ensuring a comprehensive solution for account deployment, governance, and compliance.  
-tags:    
-  - AWS    
-  - AWS Control Tower    
-  - AWS Organizations    
-  - AWS Service Catalog    
-  - AWS IAM Identity Center    
-  - Cloud Governance    
-  - Compliance    
-  - Account Management    
+tags:
+
+- AWS
+- AWS Control Tower
+- AWS Organizations
+- AWS Service Catalog
+- AWS IAM Identity Center
+- Cloud Governance
+- Compliance
+- Account Management
 ```
 
 - paste the output in the original MD-file replacing the title
-- copy the text from the key: *image-prompt* into [Bing Image Creator](https://chat.openai.com/g/g-2fkFE8rbu-dall-e)
+- copy the text from the key: _image-prompt_ into [Bing Image Creator](https://chat.openai.com/g/g-2fkFE8rbu-dall-e)
 - pick the picture and download
 - the is an [Background Remover](https://www.remove.bg/) where you can remove the background from your picture.
 - download the (free) preview picture
@@ -53,9 +54,8 @@ in the terminal of vscode in the folder C:\code\eleventy\eleventy-base-blog run 
 npx @11ty/eleventy --serve
 ```
 
-somtimes after adding a new page the devserver needs to be stopped ```Ctrl-C``` and started ```11ty``` again.
+somtimes after adding a new page the devserver needs to be stopped `Ctrl-C` and started `11ty` again.
 
 ## Push it out to production
 
-- Simply commit and push the local repository will sync it and the data is available on [https://blog.amazoninstructor.info/](https://blog.amazoninstructor.info/)
-
+- Simply commit and push the local repository will sync it and the data is available on [https://blog.skillsoft-demo.net/](https://blog.skillsoft-demo.net/)
