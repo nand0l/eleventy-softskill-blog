@@ -1,4 +1,4 @@
-# amazoninstructor blog
+# skillsoft blog
 
 ## eleventy-base-blog v8
 

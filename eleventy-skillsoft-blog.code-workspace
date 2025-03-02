@@ -23,7 +23,7 @@
         "window.zoomLevel": 1,
         "workbench.colorTheme": "Default Dark+",
         "workbench.colorCustomizations": {
-            "titleBar.activeBackground": "#3c8945",
+            "titleBar.activeBackground": "#83c58b",
         }
     }
 }

@@ -2,7 +2,7 @@
 title: Run AWS Systems Manager Documents on AWS Lightsail Instances
 date: 2024-07-09
 image-prompt: An illustration of AWS Systems Manager and AWS Lightsail integration showing installation of the SSM agent and IAM role attachment
-image: placeholder.png
+image: 135577a2-afe2-4a00-a171-9a3e1dd2607a.webp
 imageAlt: Illustration of running AWS Systems Manager documents on AWS Lightsail instances
 description: Learn how to install the SSM Agent, create an IAM role, and execute Systems Manager documents on AWS Lightsail instances in this step-by-step guide.
 introduction: This guide provides a comprehensive step-by-step process for running AWS Systems Manager documents on AWS Lightsail instances, including installing the SSM Agent, creating IAM roles, and executing commands.
